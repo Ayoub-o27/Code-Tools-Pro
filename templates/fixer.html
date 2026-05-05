@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bug Fixer - AI Code Tools</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='tailwind-config.js') }}"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="page">
+<div class="app">
+  <aside class="side">
+    <div class="logo">
+      <div class="box">
+        <span class="icon material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+      </div>
+      <span class="ver">v2.0</span>
+    </div>
+    <nav class="menu">
+      <a class="item" href="/">
+        <span class="icon material-symbols-outlined">home</span>
+        <span class="txt">Home</span>
+      </a>
+      <a class="item" href="/converter">
+        <span class="icon material-symbols-outlined">code</span>
+        <span class="txt">Converter</span>
+      </a>
+      <a class="item active" href="/fixer">
+        <span class="icon material-symbols-outlined">build</span>
+        <span class="txt">Bug Fixer</span>
+      </a>
+    </nav>
+  </aside>
+
+<main class="main">
+  <header class="top">
+    <h1 class="brand">BUG FIXER</h1>
+  </header>
+
+  <section class="wrap">
+    <div class="hero">
+      <div>
+        <h2 class="h-tit">AI Bug Fixer</h2>
+        <p class="h-txt">Automatically detect and fix bugs in your code using advanced AI analysis.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="card">
+        <p class="s-lbl">Fix speed</p>
+        <h3 class="s-val">2.2s</h3>
+        <span class="s-not">Local AI processing</span>
+      </div>
+      <div class="card">
+        <p class="s-lbl">Success rate</p>
+        <h3 class="s-val">95%</h3>
+        <span class="s-not">Proven fixes</span>
+      </div>
+      <div class="card">
+        <p class="s-lbl">Languages</p>
+        <h3 class="s-val">All</h3>
+        <span class="s-not">Any programming language</span>
+      </div>
+    </div>
+
+    <form method="POST" action="/fixer" class="grid">
+      <div class="pan p-l">
+        <div class="p-hdr">
+          <div class="p-tit">
+            <span class="dot err"></span>
+            <span class="p-lbl">Buggy Code</span>
+          </div>
+          <button type="button" class="btn-i btn-c" title="Clear Input">
+            <span class="icon material-symbols-outlined">clear</span>
+          </button>
+        </div>
+        <div class="ed">
+          <div class="lines"></div>
+          <textarea id="sourceCode" name="code" class="area scroll" spellcheck="false" placeholder="Paste your buggy code here..." required>{{ code or '' }}</textarea>
+        </div>
+      </div>
+
+      <div class="ctrl">
+        <button type="submit" class="btn btn-m">
+          <span class="icon material-symbols-outlined">build</span>
+        </button>
+        <div class="divi"></div>
+      </div>
+
+      <div class="pan p-r">
+        <div class="p-hdr">
+          <div class="p-tit">
+            <span class="dot ok"></span>
+            <span class="p-lbl">Fixed Code</span>
+          </div>
+          <div class="acts">
+            <button type="button" class="btn-i btn-cp" title="Copy to Clipboard">
+              <span class="icon material-symbols-outlined">content_copy</span>
+            </button>
+            <button type="button" class="btn-i btn-dl" title="Download Code">
+              <span class="icon material-symbols-outlined">download</span>
+            </button>
+          </div>
+        </div>
+        <div class="ed">
+          <div class="lines"></div>
+          <textarea id="resultOutput" readonly class="area scroll" spellcheck="false">{% if result %}{{ result }}{% endif %}</textarea>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <div class="f-row">
+      <p>© 2026 AI Code Tools</p>
+    </div>
+  </footer>
+</main>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

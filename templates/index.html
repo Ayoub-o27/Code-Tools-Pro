@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Tools Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <div class="logo">
+        <div class="box">
+          <span class="icon material-symbols-outlined">terminal</span>
+        </div>
+        <span class="ver">Pro</span>
+      </div>
+      <nav class="menu">
+        <a class="item active" href="/">
+          <span class="icon material-symbols-outlined">home</span>
+          <span class="txt">Home</span>
+        </a>
+        <a class="item" href="/converter">
+          <span class="icon material-symbols-outlined">code</span>
+          <span class="txt">Converter</span>
+        </a>
+        <a class="item" href="/fixer">
+          <span class="icon material-symbols-outlined">bug_report</span>
+          <span class="txt">Fixer</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="top">
+        <h1 class="brand">Code Tools Pro</h1>
+      </header>
+
+      <section class="wrap intro">
+        <div class="hero">
+          <div class="hero-content">
+            <h1 class="h-tit">Professional Code Workspace</h1>
+            <p class="h-lead">Advanced language conversion and intelligent code analysis for developers. Local processing, enterprise-grade performance.</p>
+            <p class="h-sub">Trusted by development teams for reliable code transformation and debugging.</p>
+            <div class="hero-actions">
+              <a href="/converter" class="btn btn-primary">
+                <span class="icon material-symbols-outlined">arrow_forward</span>
+                Start Converting
+              </a>
+              <a href="/fixer" class="btn btn-secondary">
+                <span class="icon material-symbols-outlined">engineering</span>
+                Debug Code
+              </a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="code-preview">
+              <div class="code-line">// Transform your workflow</div>
+              <div class="code-line">const future = await code.convert();</div>
+              <div class="code-line">// Ready for production</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">
+              <span class="icon material-symbols-outlined">bolt</span>
+            </div>
+            <h3>Lightning Performance</h3>
+            <p>Local processing with sub-second response times. Optimized for professional workflows.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <span class="icon material-symbols-outlined">security</span>
+            </div>
+            <h3>Complete Privacy</h3>
+            <p>All processing happens on your machine. Enterprise security standards.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <span class="icon material-symbols-outlined">language</span>
+            </div>
+            <h3>20+ Languages</h3>
+            <p>Comprehensive language support with accurate semantic preservation.</p>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <h2>Ready to transform your code?</h2>
+          <div class="cta-actions">
+            <a href="/converter" class="btn btn-primary btn-large">Convert Now</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <div class="footer-content">
+          <p>&copy; 2024 Code Tools Pro. Professional development utilities.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
